@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avion salon</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">     
+    <link rel="stylesheet" href="avionsalon.css">
+</head>
+<body>
+    <h1>Objednávka letenek</h1>
+    <form name="letenkyForm">
+        <label for="letenka">Vyberte letenku:</label>
+        <select name="letenka" id="letenka" onclick="vyberLetenku(); spoctiCenuAZapisJi();">
+            <option data-destinace="nevybráno" value="0">nevybráno</option>
+            <option data-destinace="Praha" value="500">Praha (500 Kč) </option>
+            <option data-destinace="Frankfurt" value="3000">Frankfurt (3 000 Kč)</option>
+            <option data-destinace="New York" value="15000">New York (15 000 Kč)</option>
+            <option data-destinace="Sydney" value="30000">Sydney (30 000 Kč)</option>
+        </select>
+
+        <label for="pocet">Počet:</label>
+        <select name="pocet" id="pocet" onclick="zjistiPocet(); spoctiCenuAZapisJi();">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+        </select>
+        <br><br>
+
+        <input type="checkbox" name="zpatecni" id="zpatecni" value="2" onclick="zjistiZpatecni(); spoctiCenuAZapisJi();">
+        <label for="">Zpáteční letenka</label>
+        <br><br>
+
+        <input type="radio" name="prirazka" id="prirazka-economy" value="0" onclick="zjistiPrirazku(); spoctiCenuAZapisJi();">
+        <label for="prirazka-economy">Economy class - bez přirážky</label><br>
+        <input type="radio" name="prirazka" id="prirazka-business" value="0.25" onclick="zjistiPrirazku(); spoctiCenuAZapisJi();">
+        <label for="prirazka-business">Business class - přirážka 25 % z ceny</label><br>
+        <input type="radio" name="prirazka" id="prirazka-royal" value="0.5" onclick="zjistiPrirazku(); spoctiCenuAZapisJi();">
+        <label for="prirazka-royal">Royal class - přirážka 50 % z ceny</label>
+        <br><br>
+
+        <label for="cena-celkem">Celková cena:</label>
+        <input type="text" name="cena-celkem" id="cena-celkem" size="10"> Kč <br>
+        <label for="">Kolik můžete utratit?</label>
+        <input type="text" name="k-utraceni" id="k-utraceni" size="10"> Kč
+        <input type="button" id="kontrola" value="Kontrola" onclick="porovnej()">
+        <span id="vyhodnoceniKontroly"></span>
+        <br><br>
+
+        <textarea name="poznamka" id="poznamka" cols="45" rows="10" placeholder="jakékoli vaše poznámky a připomínky" onkeyup="validace()"></textarea>
+        <p id="text-validace"></p>
+
+    </form>
+    
+    <script src="avionsalon.js"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+body {
+    font-family: sans-serif;
+    font-size: 14px;
+}
+
+#cena-celkem, #k-utraceni {
+    margin: 3px;
+}
+
+#text-validace {
+    color: red;
+}
